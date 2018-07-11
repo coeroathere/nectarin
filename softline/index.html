@@ -816,7 +816,7 @@ p.nominalBounds = new cjs.Rectangle(0,-96,970,500);
 	// sl_all_3
 	this.instance = new lib.sl_all_3();
 	this.instance.parent = this;
-	this.instance.setTransform(485,154,1,1,0,0,0,485,154);
+	this.instance.setTransform(0,154,1,1,0,0,0,485,154);
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(250));
 	// BACKGROUND
 	this.shape = new cjs.Shape();
@@ -1159,7 +1159,7 @@ function handleComplete(evt,comp) {
 			stage.tickOnUpdate = true;		
 		}
 	}
-	makeResponsive(true,'both',false,2);	
+	makeResponsive(false,'both',false,2);	
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
 }
