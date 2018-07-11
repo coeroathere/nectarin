@@ -637,7 +637,7 @@ p.nominalBounds = new cjs.Rectangle(-239.1,-30.3,478.3,60.6);
 		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
 	}
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(7).to({_off:false},0).to({x:269.3,y:48,alpha:1},22,cjs.Ease.quintInOut).wait(105).to({startPosition:0},0).to({x:880.9,y:47.7},17,cjs.Ease.quintInOut).wait(53).to({startPosition:0},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(7).to({_off:false},0).to({x:269.3,y:48,alpha:1},22,cjs.Ease.quintInOut).wait(105).to({startPosition:0},0).to({regY:9.4,scaleX:1.2,scaleY:1.2,x:880.9,y:47.8},17,cjs.Ease.quintInOut).wait(53).to({startPosition:0},0).wait(1));
 
 	// tetx
 	this.instance_3 = new lib.text_1("synched",0);
@@ -682,7 +682,7 @@ p.nominalBounds = new cjs.Rectangle(-239.1,-30.3,478.3,60.6);
 	this.instance_7.alpha = 0;
 	this.instance_7._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(151).to({_off:false},0).to({x:321.6,alpha:1},10,cjs.Ease.cubicOut).wait(43).to({startPosition:0},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_7).wait(151).to({_off:false},0).to({alpha:1},10,cjs.Ease.cubicOut).wait(43).to({startPosition:0},0).wait(1));
 
 	// button
 	this.instance_8 = new lib.button("synched",0);
@@ -705,14 +705,14 @@ p.nominalBounds = new cjs.Rectangle(-239.1,-30.3,478.3,60.6);
 	this.instance_9.parent = this;
 	this.instance_9.setTransform(335,-48,7.642,1,0,0,0,335,48);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_9).to({y:48},14,cjs.Ease.quintInOut).wait(120).to({startPosition:0},0).to({x:1784},17).wait(53).to({startPosition:0},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_9).to({y:48},14,cjs.Ease.quintInOut).wait(120).to({startPosition:0},0).to({x:1784},17,cjs.Ease.quintInOut).wait(53).to({startPosition:0},0).wait(1));
 
 	// rec_red - копия
 	this.instance_10 = new lib.rec_red_335("synched",0);
 	this.instance_10.parent = this;
 	this.instance_10.setTransform(335,327,7.642,1,0,0,0,335,77);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_10).to({y:173},14,cjs.Ease.quintInOut).wait(120).to({startPosition:0},0).to({x:1784},17).wait(53).to({startPosition:0},0).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_10).to({y:173},14,cjs.Ease.quintInOut).wait(120).to({startPosition:0},0).to({x:1784},17,cjs.Ease.quintInOut).wait(53).to({startPosition:0},0).wait(1));
 
 	// rec_white
 	this.instance_11 = new lib.rec_white_335("synched",0);
