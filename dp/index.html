@@ -12,14 +12,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="authoring-tool" content="Adobe_Animate_CC">
-<title>index</title>
+<title>index</title> 
 <script>
     var clickurls = [%clickurls%];
     function click(n){
         n = (n || 1) - 1;
         window.open(clickurls[n], "_blank");
     }
-</script>
+</script> 
 <script src="https://dsp-rambler.ru/js/createjs/createjs-2015.11.26.min.js"></script>
 <script src="index.js"></script>
 <script>
@@ -59,7 +59,7 @@ function handleComplete(evt,comp) {
 		createjs.Ticker.addEventListener("tick", stage);
 	}	    
 	//Code to support hidpi screens and responsive scaling.
-	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+	/*function makeResponsive(isResp, respDim, isScale, scaleType) {		
 		var lastW, lastH, lastS=1;		
 		window.addEventListener('resize', resizeCanvas);		
 		resizeCanvas();		
@@ -95,7 +95,7 @@ function handleComplete(evt,comp) {
 		}
 	}
 	makeResponsive(false,'both',false,2);	
-	AdobeAn.compositionLoaded(lib.properties.id);
+	AdobeAn.compositionLoaded(lib.properties.id);*/
 	fnStartAnimation();
 }
 </script>
