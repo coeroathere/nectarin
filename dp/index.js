@@ -665,12 +665,13 @@ p.nominalBounds = new cjs.Rectangle(0,0,2000,3999.9);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_1).wait(44).to({regX:97,regY:39.9,scaleX:0.13,scaleY:0.13},4,cjs.Ease.get(1)).to({regX:96.7,regY:39.6,scaleX:0.14,scaleY:0.14},4,cjs.Ease.get(1)).wait(198));
 
-	// msk
-	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("#333333").s().p("A3ZMBIAA4BMAuyAAAIAAYBg");
-	this.shape_1.setTransform(101.8,116.3,1,1.545);
+	// msk (mask)
+	var mask = new cjs.Shape();
+	mask._off = true;
+	var mask_graphics_0 = new cjs.Graphics().p("A3bTwMAAAgnDMAu3AAAMAAAAnDg");
+	var mask_graphics_52 = new cjs.Graphics().p("A3YSkMAAAglHMAuxAAAMAAAAlHg");
 
-	this.timeline.addTween(cjs.Tween.get(this.shape_1).wait(250));
+	this.timeline.addTween(cjs.Tween.get(mask).to({graphics:mask_graphics_0,x:102,y:126.4}).wait(52).to({graphics:mask_graphics_52,x:101.8,y:116.3}).wait(198));
 
 	// img1.jpg
 	this.DP = new lib.Символ3();
@@ -678,6 +679,12 @@ p.nominalBounds = new cjs.Rectangle(0,0,2000,3999.9);
 	this.DP.parent = this;
 	this.DP.setTransform(131.9,292.1,0.246,0.246,0,0,0,226.2,125.5);
 	this.DP._off = true;
+
+	var maskedShapeInstanceList = [this.DP];
+
+	for(var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
+		maskedShapeInstanceList[shapedInstanceItr].mask = mask;
+	}
 
 	this.timeline.addTween(cjs.Tween.get(this.DP).wait(15).to({_off:false},0).to({regX:225.8,regY:125.2,scaleX:0.68,scaleY:0.68,x:133,y:237.6},11,cjs.Ease.get(1)).wait(18).to({scaleX:0.63,scaleY:0.63,x:132.9,y:237.8},4,cjs.Ease.get(1)).to({scaleX:0.68,scaleY:0.68,x:133,y:237.6},4,cjs.Ease.get(1)).wait(198));
 
