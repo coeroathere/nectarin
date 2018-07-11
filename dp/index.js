@@ -669,9 +669,9 @@ p.nominalBounds = new cjs.Rectangle(0,0,2000,3999.9);
 	var mask = new cjs.Shape();
 	mask._off = true;
 	var mask_graphics_0 = new cjs.Graphics().p("A3bTwMAAAgnDMAu3AAAMAAAAnDg");
-	var mask_graphics_52 = new cjs.Graphics().p("A3YSkMAAAglHMAuxAAAMAAAAlHg");
+	var mask_graphics_52 = new cjs.Graphics().p("A3bTwMAAAgnDMAu3AAAMAAAAnDg");
 
-	this.timeline.addTween(cjs.Tween.get(mask).to({graphics:mask_graphics_0,x:102,y:126.4}).wait(52).to({graphics:mask_graphics_52,x:101.8,y:116.3}).wait(198));
+	this.timeline.addTween(cjs.Tween.get(mask).to({graphics:mask_graphics_0,x:102,y:126.4}).wait(52).to({graphics:mask_graphics_52,x:102,y:126.4}).wait(198));
 
 	// img1.jpg
 	this.DP = new lib.Символ3();
