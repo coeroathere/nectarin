@@ -251,8 +251,8 @@ p.nominalBounds = new cjs.Rectangle(0,0,145.7,28.5);
 	this.shape_26.graphics.f("#211300").s().p("AAnBPIgOgvIgyAAIgOAvIgaAAIAyidIAeAAIAzCdgAgVANIApAAIgUhGIAAAAg");
 	this.shape_26.setTransform(23.6,7.4,0.285,0.285);
 	this.shape_27 = new cjs.Shape();
-	this.shape_27.graphics.f("#211300").s().p("AiSEjQgSgRgagmQguhDgPhWQgShiAnhDQAUgkAjgVQAjgVApgBQAWgBAkAOQAkAOAJAAQAIAAArgQQAqgQAcADQAbACAZAKQAnAQAZAjQgTALgRAUQghAnAAAxQABA8AqAoQAVAUAVAIQgNAugfAsQgZAmgRAPQgZAYgdABQgVAAgdgMQgegNgZAAQgYAAgeAMQgeANgSABIgCAAQgbAAgbgZgAAAiqQgDgZAJgcQAKgZAQgTQASgVAagNQAagNAYgBQADAagKAcQgJAZgRAWQgSAVgYAMQgXAMgWAAIgGgBg");
-	this.shape_27.setTransform(7.4,9,0.285,0.285);
+	this.shape_27.graphics.f("#211300").s().p("AgoBTQgGgFgHgLQgNgTgFgYQgFgcALgTQAGgKAKgGQAKgGAMAAQAGgBAKAEQALAEACAAIAOgEQAMgFAIABQAIABAHACQALAFAHAKQgFADgFAGQgKALABANQAAARAMAMQAGAGAGACQgEANgJANIgMAPQgHAHgIAAQgGAAgJgEQgIgDgHAAQgGAAgJADQgIAEgGAAIgBAAQgHAAgHgHgAAAgwQAAgHACgIQADgHAFgGQAFgFAHgEQAHgEAHAAQABAHgDAIQgCAHgFAGQgFAGgHAEQgHAEgGAAIgCgBg");
+	this.shape_27.setTransform(7.3,9);
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_27},{t:this.shape_26},{t:this.shape_25},{t:this.shape_24},{t:this.shape_23},{t:this.shape_22},{t:this.shape_21},{t:this.shape_20},{t:this.shape_19},{t:this.shape_18},{t:this.shape_17},{t:this.shape_16},{t:this.shape_15},{t:this.shape_14},{t:this.shape_13},{t:this.shape_12},{t:this.shape_11},{t:this.shape_10},{t:this.shape_9},{t:this.shape_8},{t:this.shape_7},{t:this.shape_6},{t:this.shape_5},{t:this.shape_4},{t:this.shape_3},{t:this.shape_2},{t:this.shape_1},{t:this.shape}]}).wait(1));
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,73.5,18.8);
@@ -581,7 +581,7 @@ p.nominalBounds = new cjs.Rectangle(-2225,-96,3687.6,500);
 	this.guide_background_mc.setTransform(100,200,3.333,6.667,0,0,0,30,30);
 	this.timeline.addTween(cjs.Tween.get(this.guide_background_mc).wait(250));
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-2625,-427.9,4067.4,832);
+p.nominalBounds = new cjs.Rectangle(-2625,-96,4067.4,500);
 // stage content:
 (lib.sl_100x250_dsktp = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
@@ -655,8 +655,8 @@ lib.properties = {
 	color: "#F3F2F0",
 	opacity: 1.00,
 	manifest: [
-		{src:"image_01.png", id:"image_01"},
-		{src:"image_02.jpg", id:"image_02"}
+		{src:"image_01.png?1531743663180", id:"image_01"},
+		{src:"image_02.jpg?1531743663180", id:"image_02"}
 	],
 	preloads: []
 };
@@ -739,7 +739,43 @@ function handleComplete(evt,comp) {
 		createjs.Ticker.setFPS(lib.properties.fps);
 		createjs.Ticker.addEventListener("tick", stage);
 	}	    
-	
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;            
+			stage.tickOnUpdate = false;            
+			stage.update();            
+			stage.tickOnUpdate = true;		
+		}
+	}
+	makeResponsive(false,'both',false,2);	
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
 }
