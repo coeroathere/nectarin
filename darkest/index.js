@@ -581,11 +581,11 @@ p.nominalBounds = new cjs.Rectangle(-40,0,240,50);
 	// flash0.ai
 	this.instance = new lib.Символ1();
 	this.instance.parent = this;
-	this.instance.setTransform(20.5,539.3,0.497,0.497,0,0,0,19.9,12.7);
+	this.instance.setTransform(20.5,548.3,0.497,0.497,0,0,0,19.9,12.7);
 
 	this.instance_1 = new lib.Символ2();
 	this.instance_1.parent = this;
-	this.instance_1.setTransform(141.2,541.4,0.148,0.148,0,0,0,56.8,56.8);
+	this.instance_1.setTransform(141.2,550.4,0.148,0.148,0,0,0,56.8,56.8);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(160));
 
@@ -632,7 +632,7 @@ p.nominalBounds = new cjs.Rectangle(-40,0,240,50);
 	this.instance_3.alpha = 0;
 	this.instance_3._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(66).to({_off:false},0).to({alpha:1},17).wait(77));
+	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(66).to({_off:false},0).to({y:526.4,alpha:1},16).wait(78));
 
 	// Символ 7
 	this.instance_4 = new lib.Символ7();
@@ -641,7 +641,7 @@ p.nominalBounds = new cjs.Rectangle(-40,0,240,50);
 	this.instance_4.alpha = 0;
 	this.instance_4._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(29).to({_off:false},0).to({scaleX:0.67,scaleY:0.67,x:80.1,y:467.7,alpha:1},37,cjs.Ease.quartIn).wait(94));
+	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(29).to({_off:false},0).to({scaleX:0.67,scaleY:0.67,x:79.1,y:509.6,alpha:1},37,cjs.Ease.quartIn).wait(94));
 
 	// Символ 6
 	this.instance_5 = new lib.Символ6();
@@ -650,7 +650,7 @@ p.nominalBounds = new cjs.Rectangle(-40,0,240,50);
 	this.instance_5.alpha = 0;
 	this.instance_5._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(29).to({_off:false},0).to({scaleX:1,scaleY:1,x:80,y:442.4,alpha:1},37,cjs.Ease.quartIn).wait(94));
+	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(29).to({_off:false},0).to({scaleX:1,scaleY:1,x:79,y:484.3,alpha:1},37,cjs.Ease.quartIn).wait(94));
 
 	// Слой 4
 	this.shine = new lib.Символ11();
