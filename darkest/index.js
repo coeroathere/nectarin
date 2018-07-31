@@ -581,11 +581,11 @@ p.nominalBounds = new cjs.Rectangle(-40,0,240,50);
 	// logos
 	this.instance = new lib.Символ1();
 	this.instance.parent = this;
-	this.instance.setTransform(20.5,552.1,0.497,0.497,0,0,0,19.9,12.7);
+	this.instance.setTransform(20.5,557.1,0.497,0.497,0,0,0,19.9,12.7);
 
 	this.instance_1 = new lib.Символ2();
 	this.instance_1.parent = this;
-	this.instance_1.setTransform(141.2,553.1,0.148,0.148,0,0,0,56.8,56.8);
+	this.instance_1.setTransform(141.2,556.1,0.148,0.148,0,0,0,56.8,56.8);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_1},{t:this.instance}]}).wait(160));
 
@@ -650,7 +650,7 @@ p.nominalBounds = new cjs.Rectangle(-40,0,240,50);
 	this.instance_5.alpha = 0;
 	this.instance_5._off = true;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(29).to({_off:false},0).to({regX:70.6,scaleX:0.81,scaleY:0.81,x:92.8,y:475,alpha:1},37,cjs.Ease.quartIn).wait(94));
+	this.timeline.addTween(cjs.Tween.get(this.instance_5).wait(29).to({_off:false},0).to({regX:70.6,scaleX:0.81,scaleY:0.81,x:80.1,y:475,alpha:1},37,cjs.Ease.quartIn).wait(94));
 
 	// Слой 4
 	this.shine = new lib.Символ11();
