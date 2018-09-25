@@ -667,7 +667,7 @@ p.nominalBounds = new cjs.Rectangle(-40,0,240,50);
 	this.instance_6.setTransform(87.2,-265.1,1.5,1.5,0,0,0,150,249.8);
 	this.instance_6.alpha = 0;
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_6).to({scaleX:1,scaleY:1,x:83.5,y:-144.1,alpha:1},34,cjs.Ease.quadInOut).to({regX:149.9,regY:249.9,scaleX:0.5,scaleY:0.5,x:75,y:125},34,cjs.Ease.quadInOut).wait(92));
+	this.timeline.addTween(cjs.Tween.get(this.instance_6).to({scaleX:1,scaleY:1,x:83.5,y:-144.1,alpha:1},34,cjs.Ease.quadOut).to({regX:149.9,regY:249.9,scaleX:0.5,scaleY:0.5,x:75,y:125},34,cjs.Ease.quadIn).wait(92));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-57.8,-339.8,500.9,1798.5);
